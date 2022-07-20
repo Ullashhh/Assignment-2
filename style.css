@@ -1,8 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
-
-
 /* Utilities */
 body{
     font-family: 'Poppins', sans-serif;
@@ -10,8 +8,6 @@ body{
     margin: 0 auto;
     padding: 0;
 }
-
-
 
 /* header */
 .header-section{
@@ -23,18 +19,17 @@ body{
     margin-right: 5vw;
     margin-top: 8vh;
     border-radius: 10px;
-    position: relative;
     height: 80vh;
 }
 .header-info{
     color: white;
-    padding-left: 3%;
-    padding-right: 25% ;
+    padding-left: 12%;
+    padding-right: 15% ;
 }
-.header-section-img img{
-    position: absolute;
-    top: 9%;
-    right: 7%;
+.header-section-img {
+    padding-right: 10%;
+    padding-top: 6%;
+    width: 50%;
 }
 .header-info h1{
     font-size: 45px;
@@ -47,6 +42,42 @@ body{
     font-weight: 700;
     background-image: linear-gradient(rgb(0, 255, 255), rgba(0, 60, 255, 0.884));
     margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.header-info > button:hover a{
+    color: black;
+}
+.header-info > button:hover i{
+    color: black;
+}
+.header-info > button::before{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    border-top: 5px solid rgb(0, 255, 255);
+    border-left: 5px solid rgba(0, 255, 255);
+    transition: all 0.5s;
+    border-top-left-radius: 10px;  
+}
+.header-info > button::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    border-right: 5px solid rgb(0, 255, 255);
+    border-bottom: 5px solid rgb(0, 255, 255);
+    transition: all 0.5s;
+    border-bottom-right-radius: 10px;
+}
+.header-info > button:hover:before, button:hover:after{
+    width: 100%;
+    height: 100%;
 }
 .header-info > button > a{
     text-decoration: none;
@@ -60,15 +91,11 @@ body{
     color: white;
 }
 
-
-
 /* main-section */
 .main-section{
     margin-top: 100px;
     display: flex;
     justify-content: center;
-    /* margin-left: 5vw; */
-    /* margin-right: 5vw; */
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -80,6 +107,12 @@ body{
     background-image: linear-gradient(rgb(0, 255, 255), rgba(0, 60, 255, 0.884));
     color: white;
     border: 0;
+    transition: hover, 0.35s;
+    cursor: pointer;
+}
+.grid-info button:hover{
+    color: black;
+    font-weight: 700;
 }
 .button-section{
     display: flex;
@@ -104,6 +137,11 @@ body{
 .button-section a{
     text-decoration: none;
     color: white;
+    transition: hover, 0.25s;
+}
+.button-section button:hover a{
+    color: black;
+    font-size: 1.1em;
 }
 .grid-section{
     display: grid;
@@ -142,8 +180,9 @@ body{
 .grid-icon p{
     color: grey;
 }
-
-
+.hide-button button{
+    display: none;
+}
 
 /* Footer section */
 .footer-section{
@@ -159,19 +198,23 @@ body{
     padding-bottom: 5%;
     margin-left: 10vw;
     margin-right: 10vw;
-    
+    font-size: 2em;
 }
-/* .footer-section hr{ */
-    /* margin: 5% 10%; */
-/* } */
 .footer-info{
     color: white;
     display: flex;
     justify-content: center;
     align-items: stretch;
+    cursor: pointer;
 }
 .footer-info p{
     padding: 2%;
+    transition: hover, 0.15s;
+}
+.footer-info p:hover{
+    color: aqua;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 .footer-social-site{
     color: white;
@@ -182,8 +225,115 @@ body{
 .footer-social-site p{
     padding: 1%;
 }
-
+.footer-social-site p i{
+    transition: hover, 0.15s;
+}
+.footer-social-site p:hover i{
+    color: aqua;
+    font-size: 30px;
+}
 .fa-facebook, .fa-twitter, .fa-instagram-square{
     color: white;
     font-size: 22px;
+}
+
+/* responsive for mobiles*/
+@media only screen and (max-width : 688px){
+    .header-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: fit-content;
+    }
+    .header-section-img img{
+        width: 100%;
+    }
+    .header-info > button{
+        margin-left: 20%;
+    }
+    .header-info h1{
+        font-size: 25px;
+    }
+    .main-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-section{
+        margin-bottom: 50px;
+        margin-top: -50px;
+        height: 100%;
+        padding-bottom: 18px ;
+    }
+    .grid-section{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .hide-button{
+        display: none;
+    }
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+}
+
+/* responsive for tablets*/
+@media only screen and (min-width : 689px) and (max-width : 1024px){
+    .header-section{
+        display: flex;
+        align-items: center;
+        height: fit-content;
+    }
+    .header-section-img img{
+        width: 130%;
+    }
+    .header-info > button{
+        margin-bottom: 10%;
+    }
+    .header-info h1{
+        font-size: 30px;
+    }
+    .main-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-section{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 50px;
+        margin-top: -50px;
+        height: 100%;
+        padding-bottom: 18px ;
+    }
+    .button-section button{
+        margin: 0 10px;
+    }
+    .grid-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .hide-button button{
+        display: block;
+        margin-top: 30%;
+        margin-bottom: -40%;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        background-image: linear-gradient(rgb(0, 255, 255), rgba(0, 60,255, 0.884));
+        border: 0;
+    }
+    .hide-button a{
+        text-decoration: none;
+        color: white;
+    }
+    .footer-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }  
 }
